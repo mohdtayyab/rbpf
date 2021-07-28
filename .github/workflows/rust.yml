@@ -17,15 +17,24 @@ jobs:
           - nightly
     steps:
       - uses: actions/checkout@v2
-      - uses: Swatinem/rust-cache@v1
+#       - uses: Swatinem/rust-cache@v1
       - uses: actions-rs/toolchain@v1
         with:
              toolchain: ${{ matrix.rust }}
              components: 'rustfmt, clippy'
              override: true 
-      - uses: actions-rs/cargo@v1
+#       - uses: actions-rs/cargo@v1
+#         with:
+#              use-cross: true
+      - uses: actions/cache@v2
         with:
-             use-cross: true
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
       - run: |
              rustup update
              rustup component add clippy-preview
@@ -45,75 +54,75 @@ jobs:
 #           cargo publish --token "$CRATES_IO_TOKEN"
      
   
-  ubuntu:
-    runs-on: 'ubuntu-latest' 
-    strategy:
-      matrix:
-        rust:
-          - stable
-          - beta
-    steps:
-      - uses: actions/checkout@v2
-      - uses: Swatinem/rust-cache@v1
-      - uses: actions-rs/toolchain@v1
-        with:
-             toolchain: ${{ matrix.rust }}
-             components: 'rustfmt, clippy'
-             override: true 
-      - uses: actions-rs/cargo@v1
-        with:
-             use-cross: true
-      - run: |
-             rustup update
-             rustup component add clippy-preview
-             rustup component add rustfmt
-             cargo fmt --all -- --check
-             cargo clippy --all --tests -- --deny=warnings
-             set RUSTFLAGS="-D warnings"
-             cargo build --all-features
-             cargo build --verbose
-             cargo test --verbose
-             cargo doc
-             cargo package
-      - uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release --all-features
-      - uses: katyo/publish-crates@v1
-        with:
-          registry-token: ${{ secrets.API_KEY }}   
-  mac-os:
-    runs-on: 'macOS-latest' 
-    strategy:
-      matrix:
-        rust:
-          - stable
-          - beta
-    steps:
-      - uses: actions/checkout@v2
-      - uses: Swatinem/rust-cache@v1
-      - uses: actions-rs/toolchain@v1
-        with:
-             toolchain: ${{ matrix.rust }}
-             components: 'rustfmt, clippy'
-             override: true 
-      - uses: actions-rs/cargo@v1
-        with:
-             use-cross: true
-      - run: |
-             rustup update
-             rustup component add clippy-preview
-             rustup component add rustfmt
-             cargo fmt --all -- --check
-             cargo clippy --all --tests -- --deny=warnings
-             set RUSTFLAGS="-D warnings"
-             cargo build --verbose
-             cargo test --verbose
-             cargo doc
-             cargo package
-      - uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release --all-features
+#   ubuntu:
+#     runs-on: 'ubuntu-latest' 
+#     strategy:
+#       matrix:
+#         rust:
+#           - stable
+#           - beta
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: Swatinem/rust-cache@v1
+#       - uses: actions-rs/toolchain@v1
+#         with:
+#              toolchain: ${{ matrix.rust }}
+#              components: 'rustfmt, clippy'
+#              override: true 
+#       - uses: actions-rs/cargo@v1
+#         with:
+#              use-cross: true
 #       - run: |
-#           cargo publish --token "$CRATES_IO_TOKEN"
+#              rustup update
+#              rustup component add clippy-preview
+#              rustup component add rustfmt
+#              cargo fmt --all -- --check
+#              cargo clippy --all --tests -- --deny=warnings
+#              set RUSTFLAGS="-D warnings"
+#              cargo build --all-features
+#              cargo build --verbose
+#              cargo test --verbose
+#              cargo doc
+#              cargo package
+#       - uses: actions-rs/cargo@v1
+#         with:
+#           command: build
+#           args: --release --all-features
+#       - uses: katyo/publish-crates@v1
+#         with:
+#           registry-token: ${{ secrets.API_KEY }}   
+#   mac-os:
+#     runs-on: 'macOS-latest' 
+#     strategy:
+#       matrix:
+#         rust:
+#           - stable
+#           - beta
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: Swatinem/rust-cache@v1
+#       - uses: actions-rs/toolchain@v1
+#         with:
+#              toolchain: ${{ matrix.rust }}
+#              components: 'rustfmt, clippy'
+#              override: true 
+#       - uses: actions-rs/cargo@v1
+#         with:
+#              use-cross: true
+#       - run: |
+#              rustup update
+#              rustup component add clippy-preview
+#              rustup component add rustfmt
+#              cargo fmt --all -- --check
+#              cargo clippy --all --tests -- --deny=warnings
+#              set RUSTFLAGS="-D warnings"
+#              cargo build --verbose
+#              cargo test --verbose
+#              cargo doc
+#              cargo package
+#       - uses: actions-rs/cargo@v1
+#         with:
+#           command: build
+#           args: --release --all-features
+# #       - run: |
+# #           cargo publish --token "$CRATES_IO_TOKEN"
