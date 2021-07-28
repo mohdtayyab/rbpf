@@ -56,7 +56,7 @@ jobs:
           version: latest
           use-tool-cache: true
       - run: |
-           cargo publish --token "$API_KEY"
+           cargo publish --token ${{ secrets.CRATES_IO_TOKEN }}
      
   
 #   ubuntu:
