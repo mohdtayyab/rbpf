@@ -8,8 +8,9 @@
 
 #![allow(dead_code)]
 
-extern crate libc;
+//extern crate libc;
 extern crate giit_rbpf;
+extern crate libc;
 
 // Assembly code and data for tcp_sack testcases.
 
