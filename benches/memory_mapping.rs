@@ -6,16 +6,18 @@
 
 #![feature(test)]
 
-extern crate rand;
+// extern crate rand;
 extern crate giit_rbpf;
+extern crate rand;
 extern crate test;
 
-use rand::{rngs::SmallRng, Rng, SeedableRng};
+// use rand::{rngs::SmallRng, Rng, SeedableRng};
 use giit_rbpf::{
     memory_region::{AccessType, MemoryMapping, MemoryRegion},
     user_error::UserError,
     vm::Config,
 };
+use rand::{rngs::SmallRng, Rng, SeedableRng};
 use test::Bencher;
 
 fn generate_memory_regions(
