@@ -7,4 +7,4 @@ publish = false
 
 [dependencies]
 libc = "0.2"
-giit_solutions_rbpf = { path = "../" }
+solana_rbpf = { path = "../" }
