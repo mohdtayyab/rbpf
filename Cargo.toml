@@ -1,5 +1,5 @@
 [package]
-name = "solana_rbpf"
+name = "giit_rbpf"
 version = "0.2.14"
 description = "Virtual machine and JIT compiler for eBPF programs"
 authors = ["Solana Maintainers <maintainers@solana.foundation>"]
