@@ -6,10 +6,10 @@
 
 #![feature(test)]
 
-extern crate solana_rbpf;
+extern crate giit_rbpf;
 extern crate test;
 
-use solana_rbpf::{
+use giit_rbpf::{
     user_error::UserError,
     vm::{Config, EbpfVm, Executable, SyscallRegistry, TestInstructionMeter},
 };
@@ -67,7 +67,7 @@ fn bench_jit_vs_interpreter(
     instruction_meter: u64,
     mem: &mut [u8],
 ) {
-    let mut executable = solana_rbpf::assembler::assemble::<UserError, TestInstructionMeter>(
+    let mut executable = giit_rbpf::assembler::assemble::<UserError, TestInstructionMeter>(
         assembly,
         None,
         Config::default(),
