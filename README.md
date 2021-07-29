@@ -1,4 +1,4 @@
-# solana_rbpf
+# giit_rbpf
 
 ![](misc/rbpf_256.png)
 
@@ -32,7 +32,7 @@ so it should work out of the box by adding it as a dependency in your
 
 ```toml
 [dependencies]
-solana_rbpf = "0.2.14"
+giit_rbpf = "0.2.14"
 ```
 
 You can also use the development version from this GitHub repository. This
@@ -40,7 +40,7 @@ should be as simple as putting this inside your `Cargo.toml`:
 
 ```toml
 [dependencies]
-solana_rbpf = { git = "https://github.com/solana-labs/rbpf", branch = "main" }
+giit_rbpf = { git = "https://github.com/solana-labs/rbpf", branch = "main" }
 ```
 
 Of course, if you prefer, you can clone it locally, possibly hack the crate,
@@ -48,13 +48,13 @@ and then indicate the path of your local version in `Cargo.toml`:
 
 ```toml
 [dependencies]
-solana_rbpf = { path = "path/to/solana_rbpf" }
+giit_rbpf = { path = "path/to/solana_rbpf" }
 ```
 
 Then indicate in your source code that you want to use the crate:
 
 ```rust,ignore
-extern crate solana_rbpf;
+extern crate giit_rbpf;
 ```
 
 ## API
