@@ -19,10 +19,10 @@
 
 // These are unit tests for the eBPF “verifier”.
 
-extern crate solana_rbpf;
+extern crate giit_rbpf;
 extern crate thiserror;
 
-use solana_rbpf::{
+use giit_rbpf::{
     assembler::assemble,
     error::UserDefinedError,
     user_error::UserError,
