@@ -41,9 +41,9 @@ pub const BPF_KTIME_GETNS_IDX: u32 = 5;
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::bpf_time_getns;
-/// use solana_rbpf::memory_region::MemoryRegion;
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::bpf_time_getns;
+/// use giit_rbpf::memory_region::MemoryRegion;
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let regions = [MemoryRegion::default()];
 /// let t = bpf_time_getns::<UserError>(0, 0, 0, 0, 0, &regions, &regions).unwrap();
@@ -83,9 +83,9 @@ pub const BPF_TRACE_PRINTK_IDX: u32 = 6;
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::bpf_trace_printf;
-/// use solana_rbpf::memory_region::MemoryRegion;
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::bpf_trace_printf;
+/// use giit_rbpf::memory_region::MemoryRegion;
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let regions = [MemoryRegion::default()];
 /// let res = bpf_trace_printf::<UserError>(0, 0, 1, 15, 32, &regions, &regions).unwrap();
@@ -144,9 +144,9 @@ pub fn bpf_trace_printf<E: UserDefinedError> (
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::gather_bytes;
-/// use solana_rbpf::memory_region::MemoryRegion;
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::gather_bytes;
+/// use giit_rbpf::memory_region::MemoryRegion;
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let regions = [MemoryRegion::default()];
 /// let gathered = gather_bytes::<UserError>(0x11, 0x22, 0x33, 0x44, 0x55, &regions, &regions).unwrap();
@@ -176,9 +176,9 @@ pub fn gather_bytes<E: UserDefinedError> (
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::memfrob;
-/// use solana_rbpf::memory_region::MemoryRegion;
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::memfrob;
+/// use giit_rbpf::memory_region::MemoryRegion;
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let val = vec![0x00, 0x00, 0x00, 0x00, 0x00, 0x11, 0x22, 0x33];
 /// let val_va = 0x1000;
@@ -236,9 +236,9 @@ pub fn memfrob<E: UserDefinedError> (
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::sqrti;
-/// use solana_rbpf::memory_region::MemoryRegion;
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::sqrti;
+/// use giit_rbpf::memory_region::MemoryRegion;
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let regions = [MemoryRegion::default()];
 /// let x = sqrti::<UserError>(9, 0, 0, 0, 0, &regions, &regions).unwrap();
@@ -263,9 +263,9 @@ pub fn sqrti<E: UserDefinedError> (
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::strcmp;
-/// use solana_rbpf::memory_region::MemoryRegion;
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::strcmp;
+/// use giit_rbpf::memory_region::MemoryRegion;
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let foo = "This is a string.";
 /// let bar = "This is another sting.";
@@ -322,12 +322,12 @@ pub fn strcmp<E: UserDefinedError> (
 ///
 /// ```
 /// extern crate libc;
-/// extern crate solana_rbpf;
+/// extern crate giit_rbpf;
 /// extern crate time;
 ///
-/// use solana_rbpf::syscalls::rand;
-/// use solana_rbpf::memory_region::MemoryRegion;
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::rand;
+/// use giit_rbpf::memory_region::MemoryRegion;
+/// use giit_rbpf::user_error::UserError;
 ///
 /// unsafe {
 ///     libc::srand(time::precise_time_ns() as u32)
