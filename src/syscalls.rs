@@ -48,10 +48,10 @@ pub const BPF_KTIME_GETNS_IDX: u32 = 5;
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::{BpfTimeGetNs, Result};
-/// use solana_rbpf::memory_region::{MemoryRegion, MemoryMapping};
-/// use solana_rbpf::vm::{Config, SyscallObject};
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::{BpfTimeGetNs, Result};
+/// use giit_rbpf::memory_region::{MemoryRegion, MemoryMapping};
+/// use giit_rbpf::vm::{Config, SyscallObject};
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let mut result: Result = Ok(0);
 /// let config = Config::default();
@@ -96,10 +96,10 @@ pub const BPF_TRACE_PRINTK_IDX: u32 = 6;
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::{BpfTracePrintf, Result};
-/// use solana_rbpf::memory_region::{MemoryRegion, MemoryMapping};
-/// use solana_rbpf::vm::{Config, SyscallObject};
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::{BpfTracePrintf, Result};
+/// use giit_rbpf::memory_region::{MemoryRegion, MemoryMapping};
+/// use giit_rbpf::vm::{Config, SyscallObject};
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let mut result: Result = Ok(0);
 /// let config = Config::default();
@@ -165,10 +165,10 @@ impl SyscallObject<UserError> for BpfTracePrintf {
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::{BpfGatherBytes, Result};
-/// use solana_rbpf::memory_region::{MemoryRegion, MemoryMapping};
-/// use solana_rbpf::vm::{Config, SyscallObject};
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::{BpfGatherBytes, Result};
+/// use giit_rbpf::memory_region::{MemoryRegion, MemoryMapping};
+/// use giit_rbpf::vm::{Config, SyscallObject};
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let mut result: Result = Ok(0);
 /// let config = Config::default();
@@ -205,10 +205,10 @@ impl SyscallObject<UserError> for BpfGatherBytes {
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::{BpfMemFrob, Result};
-/// use solana_rbpf::memory_region::{MemoryRegion, MemoryMapping};
-/// use solana_rbpf::vm::{Config, SyscallObject};
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::{BpfMemFrob, Result};
+/// use giit_rbpf::memory_region::{MemoryRegion, MemoryMapping};
+/// use giit_rbpf::vm::{Config, SyscallObject};
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let val = vec![0x00, 0x00, 0x00, 0x00, 0x00, 0x11, 0x22, 0x33];
 /// let val_va = 0x100000000;
@@ -250,10 +250,10 @@ impl SyscallObject<UserError> for BpfMemFrob {
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::{BpfSqrtI, Result};
-/// use solana_rbpf::memory_region::{MemoryRegion, MemoryMapping};
-/// use solana_rbpf::vm::{Config, SyscallObject};
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::{BpfSqrtI, Result};
+/// use giit_rbpf::memory_region::{MemoryRegion, MemoryMapping};
+/// use giit_rbpf::vm::{Config, SyscallObject};
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let mut result: Result = Ok(0);
 /// let config = Config::default();
@@ -282,15 +282,15 @@ impl SyscallObject<UserError> for BpfSqrtI {
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::syscalls::{BpfStrCmp, Result};
-/// use solana_rbpf::memory_region::{MemoryRegion, MemoryMapping};
-/// use solana_rbpf::vm::{Config, SyscallObject};
+/// use giit_rbpf::syscalls::{BpfStrCmp, Result};
+/// use giit_rbpf::memory_region::{MemoryRegion, MemoryMapping};
+/// use giit_rbpf::vm::{Config, SyscallObject};
 ///
 /// let foo = "This is a string.";
 /// let bar = "This is another sting.";
 /// let va_foo = 0x100000000;
 /// let va_bar = 0x200000000;
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::user_error::UserError;
 ///
 /// let mut result: Result = Ok(0);
 /// let config = Config::default();
@@ -351,13 +351,13 @@ impl SyscallObject<UserError> for BpfStrCmp {
 ///
 /// ```
 /// extern crate libc;
-/// extern crate solana_rbpf;
+/// extern crate giit_rbpf;
 /// extern crate time;
 ///
-/// use solana_rbpf::syscalls::{BpfRand, Result};
-/// use solana_rbpf::memory_region::{MemoryRegion, MemoryMapping};
-/// use solana_rbpf::vm::{Config, SyscallObject};
-/// use solana_rbpf::user_error::UserError;
+/// use giit_rbpf::syscalls::{BpfRand, Result};
+/// use giit_rbpf::memory_region::{MemoryRegion, MemoryMapping};
+/// use giit_rbpf::vm::{Config, SyscallObject};
+/// use giit_rbpf::user_error::UserError;
 ///
 /// unsafe {
 ///     libc::srand(time::precise_time_ns() as u32)
