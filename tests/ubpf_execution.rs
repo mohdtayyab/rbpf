@@ -5,13 +5,14 @@
 // copied, modified, or distributed except according to those terms.
 
 extern crate byteorder;
-extern crate libc;
+//extern crate libc;
 extern crate giit_rbpf;
+extern crate libc;
 extern crate test_utils;
 extern crate thiserror;
 
-#[cfg(not(windows))]
-use rand::{rngs::SmallRng, RngCore, SeedableRng};
+// #[cfg(not(windows))]
+// use rand::{rngs::SmallRng, RngCore, SeedableRng};
 use giit_rbpf::{
     assembler::assemble,
     elf::ElfError,
@@ -22,6 +23,9 @@ use giit_rbpf::{
     user_error::UserError,
     vm::{Config, EbpfVm, Executable, SyscallObject, SyscallRegistry, TestInstructionMeter},
 };
+#[cfg(not(windows))]
+use rand::{rngs::SmallRng, RngCore, SeedableRng};
+
 use std::{fs::File, io::Read};
 use test_utils::{PROG_TCP_PORT_80, TCP_SACK_ASM, TCP_SACK_MATCH, TCP_SACK_NOMATCH};
 
