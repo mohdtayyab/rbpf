@@ -444,7 +444,7 @@ macro_rules! translate_memory_access {
 /// # Examples
 ///
 /// ```
-/// use solana_rbpf::{ebpf, elf::register_bpf_function, vm::{Config, Executable, EbpfVm, TestInstructionMeter, SyscallRegistry}, user_error::UserError};
+/// use giit_rbpf::{ebpf, elf::register_bpf_function, vm::{Config, Executable, EbpfVm, TestInstructionMeter, SyscallRegistry}, user_error::UserError};
 ///
 /// let prog = &[
 ///     0x95, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00  // exit
@@ -483,7 +483,7 @@ impl<'a, E: UserDefinedError, I: InstructionMeter> EbpfVm<'a, E, I> {
     /// # Examples
     ///
     /// ```
-    /// use solana_rbpf::{ebpf, elf::register_bpf_function, vm::{Config, Executable, EbpfVm, TestInstructionMeter, SyscallRegistry}, user_error::UserError};
+    /// use giit_rbpf::{ebpf, elf::register_bpf_function, vm::{Config, Executable, EbpfVm, TestInstructionMeter, SyscallRegistry}, user_error::UserError};
     ///
     /// let prog = &[
     ///     0x95, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00  // exit
@@ -557,7 +557,7 @@ impl<'a, E: UserDefinedError, I: InstructionMeter> EbpfVm<'a, E, I> {
     /// # Examples
     ///
     /// ```
-    /// use solana_rbpf::{ebpf, elf::register_bpf_function, vm::{Config, Executable, EbpfVm, SyscallObject, SyscallRegistry, TestInstructionMeter}, syscalls::BpfTracePrintf, user_error::UserError};
+    /// use giit_rbpf::{ebpf, elf::register_bpf_function, vm::{Config, Executable, EbpfVm, SyscallObject, SyscallRegistry, TestInstructionMeter}, syscalls::BpfTracePrintf, user_error::UserError};
     ///
     /// // This program was compiled with clang, from a C program containing the following single
     /// // instruction: `return bpf_trace_printk("foo %c %c %c\n", 10, 1, 2, 3);`
@@ -634,7 +634,7 @@ impl<'a, E: UserDefinedError, I: InstructionMeter> EbpfVm<'a, E, I> {
     /// # Examples
     ///
     /// ```
-    /// use solana_rbpf::{ebpf, elf::register_bpf_function, vm::{Config, Executable, EbpfVm, TestInstructionMeter, SyscallRegistry}, user_error::UserError};
+    /// use giit_rbpf::{ebpf, elf::register_bpf_function, vm::{Config, Executable, EbpfVm, TestInstructionMeter, SyscallRegistry}, user_error::UserError};
     ///
     /// let prog = &[
     ///     0x95, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00  // exit
