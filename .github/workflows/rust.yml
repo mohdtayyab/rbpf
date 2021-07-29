@@ -57,7 +57,7 @@ jobs:
         run: |
             cargo doc
       - name: deploy2      
-        run: cargo package
+        run: cargo package --allow-dirty
       - uses: actions-rs/cargo@v1
         with:
           command: build
