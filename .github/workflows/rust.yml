@@ -53,6 +53,8 @@ jobs:
             set RUSTFLAGS="-D warnings"
             cargo build --verbose
             cargo test --verbose
+      - name: before deploy
+        run: |
             cargo doc
             cargo package
       - uses: actions-rs/cargo@v1
