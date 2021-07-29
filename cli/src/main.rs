@@ -1,5 +1,5 @@
 use clap::{App, Arg};
-use solana_rbpf::{
+use giit_rbpf::{
     assembler::assemble,
     ebpf,
     memory_region::{MemoryMapping, MemoryRegion},
