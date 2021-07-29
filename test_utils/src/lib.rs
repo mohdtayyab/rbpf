@@ -9,7 +9,7 @@
 #![allow(dead_code)]
 
 extern crate libc;
-extern crate solana_rbpf;
+extern crate giit_rbpf;
 
 // Assembly code and data for tcp_sack testcases.
 
