@@ -17,8 +17,9 @@
 // use std::path::PathBuf;
 
 extern crate byteorder;
-extern crate libc;
+//extern crate libc;
 extern crate giit_rbpf;
+extern crate libc;
 extern crate test_utils;
 
 use giit_rbpf::{
