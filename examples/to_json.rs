@@ -10,8 +10,8 @@ extern crate json;
 extern crate elf;
 use std::path::PathBuf;
 
-extern crate solana_rbpf;
-use solana_rbpf::{
+extern crate giit_rbpf;
+use giit_rbpf::{
     disassembler::disassemble_instruction,
     static_analysis::Analysis,
     user_error::UserError,
