@@ -302,7 +302,7 @@ name = "rbpf_cli"
 version = "0.2.14"
 dependencies = [
  "clap",
- "solana_rbpf",
+ "giit_rbpf",
  "test_utils",
 ]
 
@@ -333,7 +333,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana_rbpf"
+name = "giit_rbpf"
 version = "0.2.14"
 dependencies = [
  "byteorder",
@@ -380,7 +380,7 @@ name = "test_utils"
 version = "0.2.14"
 dependencies = [
  "libc",
- "solana_rbpf",
+ "giit_rbpf",
 ]
 
 [[package]]
