@@ -56,7 +56,8 @@ jobs:
       - name: before deploy
         run: |
             cargo doc
-            cargo package
+      - name: deploy2      
+        run: cargo package
       - uses: actions-rs/cargo@v1
         with:
           command: build
