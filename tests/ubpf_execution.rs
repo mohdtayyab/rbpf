@@ -58,8 +58,8 @@ macro_rules! test_interpreter_and_jit {
                     $(test_interpreter_and_jit!(bind, vm, $location => $syscall_function; $syscall_context_object);)*
                     let result = vm.execute_program_jit(&mut TestInstructionMeter { remaining: $expected_instruction_count });
                     let tracer_jit = vm.get_tracer();
-                    if !check_closure(&vm, result) || !solana_rbpf::vm::Tracer::compare(&_tracer_interpreter, tracer_jit) {
-                        let analysis = solana_rbpf::static_analysis::Analysis::from_executable($executable.as_ref());
+                    if !check_closure(&vm, result) || !giit_rbpf::vm::Tracer::compare(&_tracer_interpreter, tracer_jit) {
+                        let analysis = giit_rbpf::static_analysis::Analysis::from_executable($executable.as_ref());
                         let stdout = std::io::stdout();
                         _tracer_interpreter.write(&mut stdout.lock(), &analysis).unwrap();
                         tracer_jit.write(&mut stdout.lock(), &analysis).unwrap();
@@ -3393,7 +3393,7 @@ fn test_tcp_sack_nomatch() {
 
 #[cfg(not(windows))]
 fn execute_generated_program(prog: &[u8]) -> bool {
-    use solana_rbpf::{elf::register_bpf_function, verifier::check};
+    use giit_rbpf::{elf::register_bpf_function, verifier::check};
     use std::collections::BTreeMap;
 
     let max_instruction_count = 1024;
@@ -3438,9 +3438,9 @@ fn execute_generated_program(prog: &[u8]) -> bool {
     });
     let tracer_jit = vm.get_tracer();
     if result_interpreter != result_jit
-        || !solana_rbpf::vm::Tracer::compare(&tracer_interpreter, tracer_jit)
+        || !giit_rbpf::vm::Tracer::compare(&tracer_interpreter, tracer_jit)
     {
-        let analysis = solana_rbpf::static_analysis::Analysis::from_executable(executable.as_ref());
+        let analysis = giit_rbpf::static_analysis::Analysis::from_executable(executable.as_ref());
         println!("result_interpreter={:?}", result_interpreter);
         println!("result_jit={:?}", result_jit);
         let stdout = std::io::stdout();
@@ -3460,7 +3460,7 @@ fn execute_generated_program(prog: &[u8]) -> bool {
 #[cfg(not(windows))]
 #[test]
 fn test_total_chaos() {
-    use solana_rbpf::ebpf;
+    use giit_rbpf::ebpf;
     let instruction_count = 6;
     let iteration_count = 1000000;
     let mut program = vec![0; instruction_count * ebpf::INSN_SIZE];
