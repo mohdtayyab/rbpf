@@ -18,10 +18,10 @@
 
 extern crate byteorder;
 extern crate libc;
-extern crate solana_rbpf;
+extern crate giit_rbpf;
 extern crate test_utils;
 
-use solana_rbpf::{
+use giit_rbpf::{
     fuzz::fuzz,
     syscalls::{BpfSyscallString, BpfSyscallU64},
     user_error::UserError,
