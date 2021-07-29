@@ -7,11 +7,11 @@
 #![feature(test)]
 
 extern crate rand;
-extern crate solana_rbpf;
+extern crate giit_rbpf;
 extern crate test;
 
 use rand::{rngs::SmallRng, Rng, SeedableRng};
-use solana_rbpf::{
+use giit_rbpf::{
     memory_region::{AccessType, MemoryMapping, MemoryRegion},
     user_error::UserError,
     vm::Config,
