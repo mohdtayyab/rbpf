@@ -6,13 +6,13 @@
 
 extern crate byteorder;
 extern crate libc;
-extern crate solana_rbpf;
+extern crate giit_rbpf;
 extern crate test_utils;
 extern crate thiserror;
 
 #[cfg(not(windows))]
 use rand::{rngs::SmallRng, RngCore, SeedableRng};
-use solana_rbpf::{
+use giit_rbpf::{
     assembler::assemble,
     elf::ElfError,
     error::EbpfError,
