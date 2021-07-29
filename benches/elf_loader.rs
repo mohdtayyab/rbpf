@@ -6,11 +6,11 @@
 
 #![feature(test)]
 
-extern crate solana_rbpf;
+extern crate giit_rbpf;
 extern crate test;
 extern crate test_utils;
 
-use solana_rbpf::{
+use giit_rbpf::{
     syscalls::BpfSyscallU64,
     user_error::UserError,
     vm::{Config, Executable, SyscallObject, SyscallRegistry, TestInstructionMeter},
