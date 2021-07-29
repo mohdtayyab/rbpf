@@ -4,8 +4,8 @@
 // the MIT license <http://opensource.org/licenses/MIT>, at your option. This file may not be
 // copied, modified, or distributed except according to those terms.
 
-extern crate solana_rbpf;
-use solana_rbpf::{
+extern crate giit_rbpf;
+use giit_rbpf::{
     syscalls,
     user_error::UserError,
     vm::{Config, EbpfVm, Executable, SyscallObject, SyscallRegistry, TestInstructionMeter},
