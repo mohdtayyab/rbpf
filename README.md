@@ -3,10 +3,13 @@
 ![](misc/rbpf_256.png)
 
 Rust (user-space) virtual machine for eBPF
+<!--he
 
 [![Build Status](https://travis-ci.com/solana-labs/rbpf.svg?branch=main)](https://travis-ci.com/solana-labs/rbpf)
 [![Crates.io](https://img.shields.io/crates/v/solana_rbpf.svg)](https://crates.io/crates/solana_rbpf)
-
+--->
+[![Build Status](https://github.com/mohdtayyab/rbpf.svg?branch=main)](https://github.com/mohdtayyab/rbpf)
+[![Crates.io](https://img.shields.io/crates/v/giit_rbpf.svg)](https://crates.io/crates/giit_rbpf)
 ## Description
 
 This is a fork of [RBPF](https://github.com/qmonnet/rbpf) by Quentin Monnet.
@@ -32,7 +35,7 @@ so it should work out of the box by adding it as a dependency in your
 
 ```toml
 [dependencies]
-giit_rbpf = "0.2.14"
+giit_rbpf = "0.2.16"
 ```
 
 You can also use the development version from this GitHub repository. This
