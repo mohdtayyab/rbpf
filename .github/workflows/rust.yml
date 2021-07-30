@@ -58,7 +58,7 @@ jobs:
             cargo doc
       - name: deploy2      
         run: cargo package --allow-dirty
-release:
+  release:
     name: Release
     needs: build
     runs-on: ubuntu-latest
