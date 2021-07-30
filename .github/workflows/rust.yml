@@ -83,12 +83,12 @@ jobs:
 #         with:
 #           toolchain: stable
 #           override: true
-      - uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release --all-features
-        env:
-          github_token: ${{secrets.GITHUB_TOKEN }}
+#       - uses: actions-rs/cargo@v1
+#         with:
+#           command: build
+#           args: --release --all-features
+#         env:
+#           github_token: ${{secrets.GITHUB_TOKEN }}
       - name: cargo login
         run: cargo login ${{ secrets.API_KEY }}
       - run: |
