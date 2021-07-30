@@ -60,8 +60,11 @@ jobs:
         run: cargo package --allow-dirty
       - uses: actions-rs/cargo@v1
         with:
+          override: true
           command: build
           args: --release --all-features
+        env:
+          github_token: ${{secrets.GITHUB_TOKEN }}
       - name: cargo login
         run: cargo login ${{ secrets.API_KEY }}
       - run: |
