@@ -69,8 +69,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: v0.2.16
+          release_name: giit_rbpf v0.2.16
           body: |
             Changes in this Release
             - First Change
