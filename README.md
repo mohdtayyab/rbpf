@@ -7,8 +7,9 @@ Rust (user-space) virtual machine for eBPF
 
 [![Build Status](https://travis-ci.com/solana-labs/rbpf.svg?branch=main)](https://travis-ci.com/solana-labs/rbpf)
 [![Crates.io](https://img.shields.io/crates/v/solana_rbpf.svg)](https://crates.io/crates/solana_rbpf)
---->
-[![Build Status](https://github.com/mohdtayyab/rbpf.svg?branch=main)](https://github.com/mohdtayyab/rbpf)
+
+[![Build Status](https://github.com/mohdtayyab/rbpf.svg?branch=main)](https://github.com/mohdtayyab/rbpf)--->
+[![Build Status](https://github.com/mohdtayyab/rbpf/actions/workflows/rust.yml/badge.svg?branch=main)
 [![Crates.io](https://img.shields.io/crates/v/giit_rbpf.svg)](https://crates.io/crates/giit_rbpf)
 ## Description
 <!-- Hello--->
