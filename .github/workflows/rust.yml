@@ -1,4 +1,4 @@
-name: Rust
+name: Build
 
 on:
   push:
@@ -69,8 +69,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: v0.2.16
-          release_name: giit_rbpf v0.2.16
+          tag_name: v0.2.17
+          release_name: giit_rbpf v0.2.17
           body: |
             Changes in this Release
             - First Change
