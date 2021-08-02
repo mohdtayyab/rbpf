@@ -37,7 +37,7 @@ so it should work out of the box by adding it as a dependency in your
 
 ```toml
 [dependencies]
-giit_rbpf = "0.2.18"
+giit_rbpf = "0.2.17"
 ```
 
 You can also use the development version from this GitHub repository. This
