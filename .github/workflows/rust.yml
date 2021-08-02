@@ -48,7 +48,7 @@ jobs:
       - name: deploy 1
         if: ${{ matrix.rust == 'nightly' }}
         run : |
-            rustup install nightly
+            rustup override set nightly
             cargo bench -- --nocapture
       - name: deploy2   
         run: cargo package 
