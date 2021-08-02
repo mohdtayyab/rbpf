@@ -69,8 +69,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: v0.2.17
-          release_name: giit_rbpf v0.2.17
+          tag_name: v0.2.18
+          release_name: giit_rbpf v0.2.18
           body: |
             Changes in this Release
             - First Change
