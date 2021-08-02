@@ -1,7 +1,7 @@
 #Name changed
 [package]
 name = "giit_rbpf"
-version = "0.2.19"
+version = "0.2.20"
 description = "Virtual machine and JIT compiler for eBPF programs"
 authors = ["Solana Maintainers <maintainers@solana.foundation>"]
 repository = "https://github.com/mohdtayyab/rbpf"
