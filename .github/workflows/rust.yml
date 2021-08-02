@@ -47,7 +47,9 @@ jobs:
             cargo doc
       - name: deploy 1
         if: ${{ matrix.rust == 'nightly' }}
-        run: cargo bench -- --nocapture
+        run : |
+            rustup install nightly
+            cargo bench -- --nocapture
       - name: deploy2   
         run: cargo package 
 #         run: cargo package --allow-dirty
