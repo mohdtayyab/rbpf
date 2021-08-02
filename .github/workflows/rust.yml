@@ -45,8 +45,9 @@ jobs:
       - name: before deploy
         run: |
             cargo doc
-      - name: deploy2      
-        run: cargo package --allow-dirty
+      - name: deploy2   
+        run: cargo package 
+#         run: cargo package --allow-dirty
   release:
     name: Release
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -70,8 +71,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: v0.2.17
-          release_name: giit_rbpf v0.2.17
+          tag_name: v0.2.18
+          release_name: giit_rbpf v0.2.18
           body: |
             Changes in this Release
             - First Change
@@ -81,4 +82,5 @@ jobs:
       - name: cargo login
         run: cargo login ${{ secrets.API_KEY }}
       - run: |
-           cargo publish --allow-dirty
+          cargo publish 
+   #        cargo publish --allow-dirty
