@@ -46,7 +46,7 @@ jobs:
         run: |
             cargo doc
       - name: deploy 1
-        if: ${{matrix.os=='nightly'}}
+        if: ${{ matrix.rust == 'nightly' }}
         run: cargo bench -- --nocapture
       - name: deploy2   
         run: cargo package 
