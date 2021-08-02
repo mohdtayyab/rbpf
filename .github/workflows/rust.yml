@@ -49,6 +49,7 @@ jobs:
         run: cargo package --allow-dirty
   release:
     name: Release
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     needs: build
     runs-on: ubuntu-latest
     steps:
