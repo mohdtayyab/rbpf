@@ -201,7 +201,7 @@ dependencies = [
 [[package]]
 #name = "giit_rbpf"
 name = "giit_rbpf"
-version = "0.2.14"
+version = "0.2.20"
 dependencies = [
  "byteorder",
  "combine",
@@ -229,7 +229,7 @@ dependencies = [
 
 [[package]]
 name = "test_utils"
-version = "0.2.14"
+version = "0.2.20"
 dependencies = [
  "libc",
  "giit_rbpf",
