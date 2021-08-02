@@ -45,6 +45,8 @@ jobs:
       - name: before deploy
         run: |
             cargo doc
+      - name: deploy 1
+        run: cargo bench -- --nocapture
       - name: deploy2   
         run: cargo package 
 #         run: cargo package --allow-dirty
