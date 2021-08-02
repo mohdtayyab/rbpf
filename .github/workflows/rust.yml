@@ -78,6 +78,6 @@ jobs:
           draft: false
           prerelease: false
       - name: cargo login
-        run: cargo login ${{ secrets.API_KEY }}
+        run: cargo login ${{ secrets.GRCRATE_IO_TOKEN}}
       - run: |
            cargo publish --allow-dirty
