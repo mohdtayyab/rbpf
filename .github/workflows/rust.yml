@@ -42,16 +42,15 @@ jobs:
             set RUSTFLAGS="-D warnings"
             cargo build --verbose
             cargo test --verbose
-      - name: before deploy
-        run: |
-            cargo doc
       - name: deploy 1
         if: ${{ matrix.rust == 'nightly' }}
         run : |
             rustup override set nightly
             cargo bench -- --nocapture
-      - name: deploy2   
-        run: cargo package 
+      - name: deploy2  
+        run: |
+          cargo doc
+          cargo package 
 #         run: cargo package --allow-dirty
 #   release:
 #     name: Release
