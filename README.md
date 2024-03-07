@@ -12,7 +12,7 @@ Rust (user-space) virtual machine for eBPF
 [![Build Status](https://github.com/mohdtayyab/rbpf/actions/workflows/rust.yml/badge.svg?branch=main)
 [![Crates.io](https://img.shields.io/crates/v/giit_rbpf.svg)](https://crates.io/crates/giit_rbpf)
 ## Description
-<!-- Hello Mohd tayyab--->
+<!-- Hello Aayushi--->
 
 This is a fork of [RBPF](https://github.com/qmonnet/rbpf) by Quentin Monnet.
 
